@@ -1,6 +1,6 @@
 package com.eric.library.rest.domain;
 
-public class CreatingCourseData {
+public class CreatingUserData {
 
     private String title;
     private long teacher;

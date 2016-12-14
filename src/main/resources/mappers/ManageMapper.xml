@@ -3,7 +3,7 @@
 
 <mapper namespace="com.eric.library.core.persistence.ManageMapper">
 
-    <resultMap id="teacherResult" type="com.eric.library.core.domain.DetailedTeacher">
+    <resultMap id="teacherResult" type="com.eric.library.core.domain.DetailedManage">
         <id column="idTeacher" property="idTeacher" javaType="long"/>
         <result column="name" property="name" javaType="string"/>
     </resultMap>

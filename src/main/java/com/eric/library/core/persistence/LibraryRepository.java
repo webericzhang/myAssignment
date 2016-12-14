@@ -2,19 +2,19 @@ package com.eric.library.core.persistence;
 
 import java.util.List;
 
-import com.eric.library.core.domain.DetailedCourse;
-import com.eric.library.core.domain.DetailedTeacher;
+import com.eric.library.core.domain.DetailedUser;
+import com.eric.library.core.domain.DetailedManage;
 
 public interface LibraryRepository {
 
-    public List<DetailedCourse> listDetailedCourses();
+    public List<DetailedUser> listDetailedCourses();
 
-    public DetailedCourse saveDetailedCourse(DetailedCourse course);
+    public DetailedUser saveDetailedCourse(DetailedUser course);
     
-    public void deleteDetailedCourse(DetailedCourse course);
+    public void deleteDetailedCourse(DetailedUser course);
     
-    public List<DetailedTeacher> listTeachers();
+    public List<DetailedManage> listTeachers();
     
-    public DetailedTeacher findTeacher(long teacher);
+    public DetailedManage findTeacher(long teacher);
 
 }

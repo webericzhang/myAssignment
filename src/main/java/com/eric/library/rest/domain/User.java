@@ -1,26 +1,26 @@
 package com.eric.library.rest.domain;
 
-import com.eric.library.core.domain.CourseLevel;
-import com.eric.library.core.domain.DetailedCourse;
+import com.eric.library.core.domain.UserLevel;
+import com.eric.library.core.domain.DetailedUser;
 
-public class Course {
+public class User {
 
     private String title;
-    private CourseLevel level;
+    private UserLevel level;
     private float hoursLong;
     
     public String getTitle() {
         return title;
     }
-    public CourseLevel getLevel() {
+    public UserLevel getLevel() {
         return level;
     }
     public float getHoursLong() {
         return hoursLong;
     }
     
-    public static Course fromDetailedCourse(DetailedCourse detailedCourse) {
-        Course course = new Course();
+    public static User fromDetailedCourse(DetailedUser detailedCourse) {
+        User course = new User();
         
         course.title = detailedCourse.getTitle();
         course.level = detailedCourse.getLevel();

@@ -2,11 +2,11 @@ package com.eric.library.core.persistence;
 
 import java.util.List;
 
-import com.eric.library.core.domain.DetailedTeacher;
+import com.eric.library.core.domain.DetailedManage;
 
 public interface ManageMapper {
 
-    public List<DetailedTeacher> list();
+    public List<DetailedManage> list();
 
-    public DetailedTeacher findById(long idTeacher);
+    public DetailedManage findById(long idTeacher);
 }

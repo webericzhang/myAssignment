@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.eric.library.core.service.CourseService;
-import com.eric.library.rest.domain.Course;
+import com.eric.library.rest.domain.User;
 
 @Controller
 @RequestMapping("/courses")
-public class CourseQueriesController {
+public class UserQueriesController {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(CourseQueriesController.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(UserQueriesController.class);
 
     @Autowired
     private CourseService courseService;
@@ -27,7 +27,7 @@ public class CourseQueriesController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<Course> getAllCourses() {
+    public List<User> getAllCourses() {
         LOGGER.info("all courses will be returned");
         return courseService.requestAllCourses().getCourses();
     }

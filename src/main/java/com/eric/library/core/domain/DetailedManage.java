@@ -1,6 +1,6 @@
 package com.eric.library.core.domain;
 
-public class DetailedTeacher {
+public class DetailedManage {
 
     private long idTeacher;
     private String name;

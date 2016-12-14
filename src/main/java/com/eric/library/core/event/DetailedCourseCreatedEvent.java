@@ -1,16 +1,16 @@
 package com.eric.library.core.event;
 
-import com.eric.library.core.domain.DetailedCourse;
+import com.eric.library.core.domain.DetailedUser;
 
 public class DetailedCourseCreatedEvent {
 
-    private final DetailedCourse detailedCourse;
+    private final DetailedUser detailedCourse;
     
-    public DetailedCourseCreatedEvent(DetailedCourse detailedCourse) {
+    public DetailedCourseCreatedEvent(DetailedUser detailedCourse) {
         this.detailedCourse = detailedCourse;
     }
     
-    public DetailedCourse getDetailedCourse() {
+    public DetailedUser getDetailedCourse() {
         return detailedCourse;
     }
 

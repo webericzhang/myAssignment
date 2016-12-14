@@ -1,16 +1,16 @@
 package com.eric.library.core.event;
 
-import com.eric.library.rest.domain.CreatingCourseData;
+import com.eric.library.rest.domain.CreatingUserData;
 
 public class CreateCourseEvent {
 
-    private final CreatingCourseData course;
+    private final CreatingUserData course;
     
-    public CreateCourseEvent(CreatingCourseData course) {
+    public CreateCourseEvent(CreatingUserData course) {
         this.course = course;
     }
     
-    public CreatingCourseData getCourseData() {
+    public CreatingUserData getCourseData() {
         return course;
     }
 

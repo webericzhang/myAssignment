@@ -13,7 +13,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import com.eric.library.core.persistence.CourseMapper;
+import com.eric.library.core.persistence.UserMapper;
 import com.eric.library.core.persistence.LibraryHSQLRepository;
 import com.eric.library.core.persistence.LibraryRepository;
 import com.eric.library.core.persistence.ManageMapper;
@@ -45,7 +45,7 @@ public class CoreConfig {
     }
     
     @Bean
-    public LibraryRepository createLibraryRepository(CourseMapper cm, ManageMapper tm) {
+    public LibraryRepository createLibraryRepository(UserMapper cm, ManageMapper tm) {
         return new LibraryHSQLRepository(cm, tm);
     }
   
@@ -77,11 +77,11 @@ public class CoreConfig {
     }
     
     @Bean
-    public CourseMapper createCourseMapper(SqlSessionFactory factory) throws Exception {
-        MapperFactoryBean<CourseMapper> mapperFactory = new MapperFactoryBean<CourseMapper>();
+    public UserMapper createCourseMapper(SqlSessionFactory factory) throws Exception {
+        MapperFactoryBean<UserMapper> mapperFactory = new MapperFactoryBean<UserMapper>();
         
         mapperFactory.setSqlSessionFactory(factory);
-        mapperFactory.setMapperInterface(CourseMapper.class);
+        mapperFactory.setMapperInterface(UserMapper.class);
         
         return mapperFactory.getObject();
     }

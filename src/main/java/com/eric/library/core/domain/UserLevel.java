@@ -1,6 +1,6 @@
 package com.eric.library.core.domain;
 
-public enum CourseLevel {
+public enum UserLevel {
 	BASIC,
 	INTERMEDIATE,
 	ADVANCED;

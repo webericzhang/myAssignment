@@ -4,40 +4,40 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.eric.library.core.domain.DetailedCourse;
-import com.eric.library.core.domain.DetailedTeacher;
+import com.eric.library.core.domain.DetailedUser;
+import com.eric.library.core.domain.DetailedManage;
 
 public class LibraryHSQLRepository implements LibraryRepository {
 
     @Autowired
-    private final CourseMapper courseMapper;
+    private final UserMapper UserMapper;
     @Autowired
     private final ManageMapper ManageMapper;
 
-    public LibraryHSQLRepository(CourseMapper courseMapper, ManageMapper ManageMapper) {
-        this.courseMapper = courseMapper;
+    public LibraryHSQLRepository(UserMapper UserMapper, ManageMapper ManageMapper) {
+        this.UserMapper = UserMapper;
         this.ManageMapper = ManageMapper;
     }
 
-    public List<DetailedCourse> listDetailedCourses() {
-        return courseMapper.listActiveCourses();
+    public List<DetailedUser> listDetailedCourses() {
+        return UserMapper.listActiveCourses();
     }
     
-    public DetailedCourse saveDetailedCourse(DetailedCourse course) {
+    public DetailedUser saveDetailedCourse(DetailedUser course) {
     	
-        courseMapper.save(course);
+        UserMapper.save(course);
         return course;
     }
     
-    public void deleteDetailedCourse(DetailedCourse course) {
-        courseMapper.delete(course);
+    public void deleteDetailedCourse(DetailedUser course) {
+        UserMapper.delete(course);
     }
     
-    public List<DetailedTeacher> listTeachers() {
+    public List<DetailedManage> listTeachers() {
         return ManageMapper.list();
     }
 
-    public DetailedTeacher findTeacher(long idTeacher) {
+    public DetailedManage findTeacher(long idTeacher) {
         return ManageMapper.findById(idTeacher);
     }
 

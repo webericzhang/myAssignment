@@ -3,16 +3,16 @@ package com.eric.library.core.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.eric.library.core.domain.CourseLevel;
+import com.eric.library.core.domain.UserLevel;
 import com.eric.library.core.event.AllCourseLevelsEvent;
 import com.eric.library.rest.domain.Level;
 
 public class LevelRequestHandler implements LevelService {
 
 	public AllCourseLevelsEvent requestAllCourseLevels() {
-	    List<Level> levels = new ArrayList<Level>(CourseLevel.values().length);
+	    List<Level> levels = new ArrayList<Level>(UserLevel.values().length);
         
-        for(CourseLevel level : CourseLevel.values()) {
+        for(UserLevel level : UserLevel.values()) {
             levels.add(Level.fromCourseLevel(level));
         }
         

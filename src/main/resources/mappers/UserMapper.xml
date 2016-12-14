@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.eric.library.core.persistence.CourseMapper">
+<mapper namespace="com.eric.library.core.persistence.UserMapper">
 
-    <resultMap id="courseWithTeacher" type="com.eric.library.core.domain.DetailedCourse">
+    <resultMap id="courseWithTeacher" type="com.eric.library.core.domain.DetailedUser">
         <id column="idCourse" property="idCourse" javaType="long"/>
         <result column="title" property="title" javaType="string"/>
-        <result column="level" property="level" javaType="com.eric.library.core.domain.CourseLevel"/>
+        <result column="level" property="level" javaType="com.eric.library.core.domain.UserLevel"/>
         <result column="hoursLong" property="hoursLong" javaType="float"/>
         <result column="active" property="active" javaType="boolean"/>
         <association property="teacher" column="idTeacher" 
@@ -30,21 +30,21 @@
         WHERE idCourse = #{idCourse}
     </select>
 <!-- 
-    <insert id="save" parameterType="com.eric.library.core.domain.DetailedCourse">
+    <insert id="save" parameterType="com.eric.library.core.domain.DetailedUser">
         INSERT INTO courses
         (idCourse, title, level, hoursLong, active, idTeacher)
         VALUES
         (NEXT VALUE FOR coursesSeq, #{title}, #{level}, #{hoursLong}, #{active}, #{teacher.idTeacher})
     </insert>
  -->   
-    <insert id="save" parameterType="com.eric.library.core.domain.DetailedCourse">
+    <insert id="save" parameterType="com.eric.library.core.domain.DetailedUser">
         INSERT INTO courses
         (title, level, hoursLong, active, idTeacher)
         VALUES
         (#{title}, #{level}, #{hoursLong}, #{active}, 1)
     </insert>
     
-    <delete id="delete" parameterType="com.eric.library.core.domain.DetailedCourse">
+    <delete id="delete" parameterType="com.eric.library.core.domain.DetailedUser">
         DELETE FROM courses
     </delete>
 

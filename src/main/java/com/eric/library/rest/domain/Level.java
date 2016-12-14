@@ -1,6 +1,6 @@
 package com.eric.library.rest.domain;
 
-import com.eric.library.core.domain.CourseLevel;
+import com.eric.library.core.domain.UserLevel;
 
 public class Level {
 
@@ -10,7 +10,7 @@ public class Level {
         return level;
     }
     
-    public static Level fromCourseLevel(CourseLevel courseLevel) {
+    public static Level fromCourseLevel(UserLevel courseLevel) {
         Level level = new Level();
 
         level.level = courseLevel.toString();

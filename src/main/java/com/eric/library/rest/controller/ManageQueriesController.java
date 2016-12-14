@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.eric.library.core.service.TeacherService;
-import com.eric.library.rest.domain.Teacher;
+import com.eric.library.rest.domain.Management;
 
 @Controller
 @RequestMapping("/teachers")
-public class TeacherQueriesController {
+public class ManageQueriesController {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(TeacherQueriesController.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(ManageQueriesController.class);
 
     @Autowired
     private TeacherService teacherService;
@@ -27,7 +27,7 @@ public class TeacherQueriesController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public List<Teacher> getAllTeachers() {
+    public List<Management> getAllTeachers() {
         LOGGER.info("all teachers will be returned");
         return teacherService.requestAllTeachers().getTeachers();
     }

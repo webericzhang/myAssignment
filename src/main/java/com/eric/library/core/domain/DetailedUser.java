@@ -1,13 +1,13 @@
 package com.eric.library.core.domain;
 
-import com.eric.library.rest.domain.CreatingCourseData;
+import com.eric.library.rest.domain.CreatingUserData;
 
-public class DetailedCourse {
+public class DetailedUser {
 
     private long idCourse;
     private String title;
-    private DetailedTeacher teacher;
-    private CourseLevel level;
+    private DetailedManage teacher;
+    private UserLevel level;
     private float hoursLong;
     private boolean active;
     
@@ -23,16 +23,16 @@ public class DetailedCourse {
     public void setTitle(String title) {
         this.title = title;
     }
-    public DetailedTeacher getTeacher() {
+    public DetailedManage getTeacher() {
         return teacher;
     }
-    public void setTeacher(DetailedTeacher teacher) {
+    public void setTeacher(DetailedManage teacher) {
         this.teacher = teacher;
     }
-    public CourseLevel getLevel() {
+    public UserLevel getLevel() {
         return level;
     }
-    public void setLevel(CourseLevel level) {
+    public void setLevel(UserLevel level) {
         this.level = level;
     }
     public float getHoursLong() {
@@ -48,10 +48,10 @@ public class DetailedCourse {
         this.active = active;
     }
     
-    public static DetailedCourse fromCreatingCourseData(CreatingCourseData courseData,
-                                                        DetailedTeacher teacher,
-                                                        CourseLevel level) {
-        DetailedCourse detailedCourse = new DetailedCourse();
+    public static DetailedUser fromCreatingCourseData(CreatingUserData courseData,
+                                                        DetailedManage teacher,
+                                                        UserLevel level) {
+        DetailedUser detailedCourse = new DetailedUser();
         
         detailedCourse.title = courseData.getTitle();
         detailedCourse.teacher = teacher;

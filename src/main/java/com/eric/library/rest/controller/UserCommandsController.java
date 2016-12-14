@@ -15,26 +15,26 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.eric.library.core.event.CreateCourseEvent;
 import com.eric.library.core.event.DetailedCourseCreatedEvent;
 import com.eric.library.core.service.CourseService;
-import com.eric.library.rest.domain.Course;
-import com.eric.library.rest.domain.CreatingCourseData;
+import com.eric.library.rest.domain.User;
+import com.eric.library.rest.domain.CreatingUserData;
 
 @Controller
 @RequestMapping("/courses")
-public class CourseCommandsController {
+public class UserCommandsController {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(CourseCommandsController.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(UserCommandsController.class);
 
     @Autowired
     private CourseService courseService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Course> createCourse(@RequestBody CreatingCourseData course, UriComponentsBuilder builder) {
+    public ResponseEntity<User> createCourse(@RequestBody CreatingUserData course, UriComponentsBuilder builder) {
         LOGGER.info("creating course with title: ", course.getTitle());
         DetailedCourseCreatedEvent courseCreated = courseService.createDetailedCourse(new CreateCourseEvent(course));
 
-        Course newCourse = Course.fromDetailedCourse(courseCreated.getDetailedCourse());
+        User newCourse = User.fromDetailedCourse(courseCreated.getDetailedCourse());
         HttpHeaders headers = new HttpHeaders();
-        return new ResponseEntity<Course>(newCourse, headers, HttpStatus.CREATED);
+        return new ResponseEntity<User>(newCourse, headers, HttpStatus.CREATED);
     }
 
 }

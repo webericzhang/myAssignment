@@ -5,10 +5,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.eric.library.core.domain.DetailedTeacher;
+import com.eric.library.core.domain.DetailedManage;
 import com.eric.library.core.event.AllTeachersEvent;
 import com.eric.library.core.persistence.LibraryRepository;
-import com.eric.library.rest.domain.Teacher;
+import com.eric.library.rest.domain.Management;
 
 public class TeacherRequestsHandler implements TeacherService {
 
@@ -20,10 +20,10 @@ public class TeacherRequestsHandler implements TeacherService {
     }
     
     public AllTeachersEvent requestAllTeachers() {
-        List<Teacher> teachers = new LinkedList<Teacher>();
+        List<Management> teachers = new LinkedList<Management>();
         
-        for(DetailedTeacher teacher : repository.listTeachers()) {
-            teachers.add(Teacher.fromTeacher(teacher));
+        for(DetailedManage teacher : repository.listTeachers()) {
+            teachers.add(Management.fromTeacher(teacher));
         }
         
         return new AllTeachersEvent(teachers);

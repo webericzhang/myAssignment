@@ -2,18 +2,18 @@ package com.eric.library.core.event;
 
 import java.util.List;
 
-import com.eric.library.rest.domain.Course;
+import com.eric.library.rest.domain.User;
 
 public class AllCoursesEvent {
 
-    private final List<Course> courses;
+    private final List<User> courses;
 
-    public AllCoursesEvent(List<Course> courses) {
+    public AllCoursesEvent(List<User> courses) {
         super();
         this.courses = courses;
     }
 
-    public List<Course> getCourses() {
+    public List<User> getCourses() {
         return courses;
     }
 
