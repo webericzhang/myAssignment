@@ -29,6 +29,10 @@
 
     librarian.controller("ListofusersCtrl", ["$scope", "$filter", "ngTableParams", "CourseServiceResource", 
         function ($scope, $filter, ngTableParams, CourseServiceResource) {
+    	
+    	$scope.delete = function(){
+    		var result = confirm('Are you sure remove this user?'); 
+    	};
 
         var tableParams = {
                 page: 1,
