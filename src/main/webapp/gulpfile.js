@@ -15,9 +15,7 @@ plumber = require('gulp-plumber'),
 minhtml = require('gulp-htmlmin'),
 browserSync = require('browser-sync'),
 order = require("gulp-order");
-//sass = require('gulp-sass');
-//var browserSync = require('browser-sync').create();
-//var reload = browserSync.reload;
+
 gulp.task('clean', function() {
 return gulp.src(['../webapp/dest'], {read: false})
 .pipe(clean());
@@ -49,11 +47,11 @@ gulp.task('js', function(argument){
             "js/lib/angular-route-1.2.4.js",
 			"js/lib/angular-resource-1.2.4.js",
 			"js/lib/ng-table-0.3.1.js",
-			"js/librarian.js",
+			"js/management.js",
 			"js/services.js"			
 		]))
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'))
+		//.pipe(jshint())
+		//.pipe(jshint.reporter('default'))
 		.pipe(plumber())
 		.pipe(changed('./dist/js'))
 		.pipe(concat('merge.js'))

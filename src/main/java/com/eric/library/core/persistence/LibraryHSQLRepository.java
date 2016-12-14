@@ -12,11 +12,11 @@ public class LibraryHSQLRepository implements LibraryRepository {
     @Autowired
     private final CourseMapper courseMapper;
     @Autowired
-    private final TeacherMapper teacherMapper;
+    private final ManageMapper ManageMapper;
 
-    public LibraryHSQLRepository(CourseMapper courseMapper, TeacherMapper teacherMapper) {
+    public LibraryHSQLRepository(CourseMapper courseMapper, ManageMapper ManageMapper) {
         this.courseMapper = courseMapper;
-        this.teacherMapper = teacherMapper;
+        this.ManageMapper = ManageMapper;
     }
 
     public List<DetailedCourse> listDetailedCourses() {
@@ -34,11 +34,11 @@ public class LibraryHSQLRepository implements LibraryRepository {
     }
     
     public List<DetailedTeacher> listTeachers() {
-        return teacherMapper.list();
+        return ManageMapper.list();
     }
 
     public DetailedTeacher findTeacher(long idTeacher) {
-        return teacherMapper.findById(idTeacher);
+        return ManageMapper.findById(idTeacher);
     }
 
 }

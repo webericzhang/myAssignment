@@ -26,5 +26,6 @@
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^4.3.11",
     "jshint": "^2.9.4"
-  }
+  },
+  "dependencies": {}
 }

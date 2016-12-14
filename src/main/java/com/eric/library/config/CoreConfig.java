@@ -16,7 +16,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import com.eric.library.core.persistence.CourseMapper;
 import com.eric.library.core.persistence.LibraryHSQLRepository;
 import com.eric.library.core.persistence.LibraryRepository;
-import com.eric.library.core.persistence.TeacherMapper;
+import com.eric.library.core.persistence.ManageMapper;
 import com.eric.library.core.service.CourseRequestsHandler;
 import com.eric.library.core.service.CourseService;
 import com.eric.library.core.service.LevelRequestHandler;
@@ -45,7 +45,7 @@ public class CoreConfig {
     }
     
     @Bean
-    public LibraryRepository createLibraryRepository(CourseMapper cm, TeacherMapper tm) {
+    public LibraryRepository createLibraryRepository(CourseMapper cm, ManageMapper tm) {
         return new LibraryHSQLRepository(cm, tm);
     }
   
@@ -68,8 +68,8 @@ public class CoreConfig {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         
         factory.setMapperLocations(new Resource[] {
-                new ClassPathResource("/mappers/CourseMapper.xml"),
-                new ClassPathResource("/mappers/TeacherMapper.xml")
+                new ClassPathResource("/mappers/UserMapper.xml"),
+                new ClassPathResource("/mappers/ManageMapper.xml")
         });
         factory.setDataSource(dataSource);
         
@@ -87,11 +87,11 @@ public class CoreConfig {
     }
     
     @Bean
-    public TeacherMapper createTeacherMapper(SqlSessionFactory factory) throws Exception {
-        MapperFactoryBean<TeacherMapper> mapperFactory = new MapperFactoryBean<TeacherMapper>();
+    public ManageMapper createTeacherMapper(SqlSessionFactory factory) throws Exception {
+        MapperFactoryBean<ManageMapper> mapperFactory = new MapperFactoryBean<ManageMapper>();
         
         mapperFactory.setSqlSessionFactory(factory);
-        mapperFactory.setMapperInterface(TeacherMapper.class);
+        mapperFactory.setMapperInterface(ManageMapper.class);
         
         return mapperFactory.getObject();
     }
