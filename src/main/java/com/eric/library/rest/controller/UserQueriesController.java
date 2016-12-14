@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.eric.library.core.service.CourseService;
+import com.eric.library.core.service.UserService;
 import com.eric.library.rest.domain.User;
 
 @Controller
@@ -22,7 +22,7 @@ public class UserQueriesController {
     private static Logger LOGGER = LoggerFactory.getLogger(UserQueriesController.class);
 
     @Autowired
-    private CourseService courseService;
+    private UserService courseService;
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)

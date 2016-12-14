@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.eric.library.rest.domain.User;
 
-public class AllCoursesEvent {
+public class AllUserEvent {
 
     private final List<User> courses;
 
-    public AllCoursesEvent(List<User> courses) {
+    public AllUserEvent(List<User> courses) {
         super();
         this.courses = courses;
     }

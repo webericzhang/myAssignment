@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.eric.library.rest.domain.Level;
 
-public class AllCourseLevelsEvent {
+public class AllUserLevelsEvent {
 
     private final List<Level> levels;
 
-    public AllCourseLevelsEvent(List<Level> levels) {
+    public AllUserLevelsEvent(List<Level> levels) {
         super();
         this.levels = levels;
     }

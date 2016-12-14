@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.eric.library.core.domain.UserLevel;
-import com.eric.library.core.event.AllCourseLevelsEvent;
+import com.eric.library.core.event.AllUserLevelsEvent;
 import com.eric.library.rest.domain.Level;
 
 public class LevelRequestHandler implements LevelService {
 
-	public AllCourseLevelsEvent requestAllCourseLevels() {
+	public AllUserLevelsEvent requestAllCourseLevels() {
 	    List<Level> levels = new ArrayList<Level>(UserLevel.values().length);
         
         for(UserLevel level : UserLevel.values()) {
             levels.add(Level.fromCourseLevel(level));
         }
         
-		return new AllCourseLevelsEvent(levels);
+		return new AllUserLevelsEvent(levels);
 	}
 
 }

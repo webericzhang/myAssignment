@@ -11,15 +11,15 @@
     librarian.config(["$routeProvider", function ($rootProvider) {
         $rootProvider
             .when("/listofusers", {
-                templateUrl: "partials/listofusers.html",
+                templateUrl: "dist/html/listofusers.html",
                 controller: "ListofusersCtrl"
             })
             .when("/addauser", {
-                templateUrl: "partials/addauser.html",
+                templateUrl: "dist/html/addauser.html",
                 controller: "AddauserCtrl"
             })
             .when("/editauser", {
-                templateUrl: "partials/editauser.html",
+                templateUrl: "dist/html/editauser.html",
                 controller: "EditauserCtrl"
             })
             .otherwise({

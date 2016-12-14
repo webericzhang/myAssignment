@@ -17,12 +17,12 @@ import com.eric.library.core.persistence.UserMapper;
 import com.eric.library.core.persistence.LibraryHSQLRepository;
 import com.eric.library.core.persistence.LibraryRepository;
 import com.eric.library.core.persistence.ManageMapper;
-import com.eric.library.core.service.CourseRequestsHandler;
-import com.eric.library.core.service.CourseService;
+import com.eric.library.core.service.UserRequestsHandler;
+import com.eric.library.core.service.UserService;
 import com.eric.library.core.service.LevelRequestHandler;
 import com.eric.library.core.service.LevelService;
-import com.eric.library.core.service.TeacherRequestsHandler;
-import com.eric.library.core.service.TeacherService;
+import com.eric.library.core.service.ManageRequestsHandler;
+import com.eric.library.core.service.ManageService;
 
 @Configuration
 public class CoreConfig {
@@ -30,13 +30,13 @@ public class CoreConfig {
     private static Logger LOGGER = LoggerFactory.getLogger(CoreConfig.class);
 
     @Bean
-    public CourseService createCourseService(LibraryRepository repository) {
-        return new CourseRequestsHandler(repository);
+    public UserService createCourseService(LibraryRepository repository) {
+        return new UserRequestsHandler(repository);
     }
 
     @Bean
-    public TeacherService createTeacherService(LibraryRepository repository) {
-        return new TeacherRequestsHandler(repository);
+    public ManageService createTeacherService(LibraryRepository repository) {
+        return new ManageRequestsHandler(repository);
     }
 
     @Bean

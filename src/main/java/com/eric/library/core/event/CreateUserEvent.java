@@ -2,11 +2,11 @@ package com.eric.library.core.event;
 
 import com.eric.library.rest.domain.CreatingUserData;
 
-public class CreateCourseEvent {
+public class CreateUserEvent {
 
     private final CreatingUserData course;
     
-    public CreateCourseEvent(CreatingUserData course) {
+    public CreateUserEvent(CreatingUserData course) {
         this.course = course;
     }
     
