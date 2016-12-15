@@ -7,11 +7,11 @@ import com.eric.library.core.domain.DetailedManage;
 
 public interface LibraryRepository {
 
-    public List<DetailedUser> listDetailedCourses();
+    public List<DetailedUser> listDetailedUsers();
 
-    public DetailedUser saveDetailedCourse(DetailedUser course);
+    public DetailedUser saveDetailedUser(DetailedUser course);
     
-    public void deleteDetailedCourse(DetailedUser course);
+    public void deleteDetailedUser(DetailedUser course);
     
     public List<DetailedManage> listTeachers();
     

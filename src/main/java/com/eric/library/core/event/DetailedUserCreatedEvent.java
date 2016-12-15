@@ -10,7 +10,7 @@ public class DetailedUserCreatedEvent {
         this.detailedCourse = detailedCourse;
     }
     
-    public DetailedUser getDetailedCourse() {
+    public DetailedUser getDetailedUser() {
         return detailedCourse;
     }
 

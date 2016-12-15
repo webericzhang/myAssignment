@@ -77,7 +77,7 @@ public class CoreConfig {
     }
     
     @Bean
-    public UserMapper createCourseMapper(SqlSessionFactory factory) throws Exception {
+    public UserMapper createUserMapper(SqlSessionFactory factory) throws Exception {
         MapperFactoryBean<UserMapper> mapperFactory = new MapperFactoryBean<UserMapper>();
         
         mapperFactory.setSqlSessionFactory(factory);

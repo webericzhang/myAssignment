@@ -19,17 +19,17 @@ public class LibraryHSQLRepository implements LibraryRepository {
         this.ManageMapper = ManageMapper;
     }
 
-    public List<DetailedUser> listDetailedCourses() {
+    public List<DetailedUser> listDetailedUsers() {
         return UserMapper.listActiveCourses();
     }
     
-    public DetailedUser saveDetailedCourse(DetailedUser course) {
+    public DetailedUser saveDetailedUser(DetailedUser course) {
     	
         UserMapper.save(course);
         return course;
     }
     
-    public void deleteDetailedCourse(DetailedUser course) {
+    public void deleteDetailedUser(DetailedUser course) {
         UserMapper.delete(course);
     }
     

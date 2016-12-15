@@ -9,7 +9,7 @@ import com.eric.library.rest.domain.Level;
 
 public class LevelRequestHandler implements LevelService {
 
-	public AllUserLevelsEvent requestAllCourseLevels() {
+	public AllUserLevelsEvent requestAllUserLevels() {
 	    List<Level> levels = new ArrayList<Level>(UserLevel.values().length);
         
         for(UserLevel level : UserLevel.values()) {

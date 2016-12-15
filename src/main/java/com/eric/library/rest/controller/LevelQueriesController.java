@@ -29,7 +29,7 @@ public class LevelQueriesController {
     @ResponseBody
     public List<Level> getAllLevels() {
         LOGGER.info("all levels will be returned");
-        return levelService.requestAllCourseLevels().getCourseLevels();
+        return levelService.requestAllUserLevels().getCourseLevels();
     }
 
 }

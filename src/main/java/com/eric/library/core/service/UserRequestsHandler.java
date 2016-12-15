@@ -25,23 +25,23 @@ public class UserRequestsHandler implements UserService {
     }
     
     public AllUserEvent requestAllCourses() {
-        List<DetailedUser> detailedCourses = repository.listDetailedCourses();
+        List<DetailedUser> detailedCourses = repository.listDetailedUsers();
         List<User> courses = new ArrayList<User>(detailedCourses.size());
         
         for(DetailedUser dc : detailedCourses) {
-            courses.add(User.fromDetailedCourse(dc));
+            courses.add(User.fromDetailedUser(dc));
         }
         
         return new AllUserEvent(courses);
     }
 
-    public DetailedUserCreatedEvent createDetailedCourse(CreateUserEvent event) {
+    public DetailedUserCreatedEvent createDetailedUser(CreateUserEvent event) {
         CreatingUserData courseData = event.getCourseData();
         DetailedManage teacher = repository.findTeacher(courseData.getTeacher());
         UserLevel level = UserLevel.valueOf(courseData.getLevel());
         
         DetailedUser course = DetailedUser.fromCreatingCourseData(courseData, teacher, level);
-        DetailedUser saved = repository.saveDetailedCourse(course);
+        DetailedUser saved = repository.saveDetailedUser(course);
         
         return new DetailedUserCreatedEvent(saved);
     }

@@ -19,7 +19,7 @@ public class User {
         return hoursLong;
     }
     
-    public static User fromDetailedCourse(DetailedUser detailedCourse) {
+    public static User fromDetailedUser(DetailedUser detailedCourse) {
         User course = new User();
         
         course.title = detailedCourse.getTitle();

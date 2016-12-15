@@ -30,9 +30,9 @@ public class UserCommandsController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<User> createCourse(@RequestBody CreatingUserData course, UriComponentsBuilder builder) {
         LOGGER.info("creating course with title: ", course.getTitle());
-        DetailedUserCreatedEvent courseCreated = courseService.createDetailedCourse(new CreateUserEvent(course));
+        DetailedUserCreatedEvent courseCreated = courseService.createDetailedUser(new CreateUserEvent(course));
 
-        User newCourse = User.fromDetailedCourse(courseCreated.getDetailedCourse());
+        User newCourse = User.fromDetailedUser(courseCreated.getDetailedUser());
         HttpHeaders headers = new HttpHeaders();
         return new ResponseEntity<User>(newCourse, headers, HttpStatus.CREATED);
     }

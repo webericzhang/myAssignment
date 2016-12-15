@@ -8,5 +8,5 @@ public interface UserService {
 
     public AllUserEvent requestAllCourses();
 
-    public DetailedUserCreatedEvent createDetailedCourse(CreateUserEvent event);
+    public DetailedUserCreatedEvent createDetailedUser(CreateUserEvent event);
 }
